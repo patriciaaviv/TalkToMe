@@ -2,7 +2,7 @@ package Users;
 
 import java.net.Socket;
 
-public class Thera {
+public class Thera extends User {
 
     private Socket sock;
     //TODO Add attribut to define Skills to be able to match
@@ -11,7 +11,6 @@ public class Thera {
     private String name;
 
     public Thera(Socket s) {
-        sock = s;
-
+        super(s);
     }
 }
