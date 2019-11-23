@@ -13,13 +13,13 @@
         android:gravity="center"
         android:text="Welcome to Talk To Me"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/button_first"
+        app:layout_constraintBottom_toTopOf="@+id/button_chat"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/button_chat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -31,7 +31,7 @@
         />
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/button_diary"
         android:layout_width="129dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textview_first" />
 
     <Button
-        android:id="@+id/button_third"
+        android:id="@+id/button_history"
         android:layout_width="129dp"
         android:layout_height="38dp"
         android:layout_gravity="center_vertical|center_horizontal"
