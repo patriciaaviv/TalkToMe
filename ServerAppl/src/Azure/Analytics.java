@@ -32,6 +32,8 @@ public class Analytics {
 
     }
 
+
+    //takes the message from patient and updates the patients statistic
     public void analyseRequest(String message, String kind){
 
         String body = makeBody(message);
