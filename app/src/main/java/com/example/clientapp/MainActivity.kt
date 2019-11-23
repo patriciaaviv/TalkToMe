@@ -15,7 +15,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val diaryButton = findViewById<Button>(R.id.button_diary)
-
         diaryButton.setOnClickListener {
             val intent = Intent(this@MainActivity, DiaryActivity::class.java)
             startActivity(intent)

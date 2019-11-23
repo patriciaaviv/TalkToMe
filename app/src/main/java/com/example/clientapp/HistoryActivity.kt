@@ -1,20 +1,12 @@
 package com.example.clientapp
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import com.github.mikephil.charting.*
+import com.google.android.material.snackbar.Snackbar
 
 import kotlinx.android.synthetic.main.activity_history.*
 
 class HistoryActivity : AppCompatActivity() {
-
-    var countHappy = 0
-    var countSad = 0
-    var countAngry = 0
-    var countNeutral = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,27 +19,11 @@ class HistoryActivity : AppCompatActivity() {
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val happyButton = findViewById<Button>(R.id.button_happy)
-        val sadButton = findViewById<Button>(R.id.button_sad)
-        val angryButton = findViewById<Button>(R.id.button_angry)
-        val neutralButton = findViewById<Button>(R.id.button_neutral)
 
 
-        happyButton.setOnClickListener {
-            countHappy++
-        }
 
-        sadButton.setOnClickListener {
-            countSad++
-        }
 
-        angryButton.setOnClickListener {
-            countAngry++
-        }
 
-        neutralButton.setOnClickListener {
-            countNeutral
-        }
     }
 
 }
