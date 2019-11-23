@@ -2,6 +2,8 @@ package com.example.clientapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 
 class MainActivity : AppCompatActivity() {
 
@@ -10,27 +12,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        return super.onCreateOptionsMenu(menu)
     }
 
-    override fun onRestart() {
-        super.onRestart()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
 
-    override fun onPause() {
-        super.onPause()
-    }
 
-    override fun onStop() {
-        super.onStop()
-    }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }
