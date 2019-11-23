@@ -1,7 +1,11 @@
 package Server;
 
+import Users.Client;
 import Users.Thera;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,23 +25,33 @@ public class ServerMain {
     //Main server method.
     public static void main(String[] args) throws IOException {
 
-        //Starting new thread to handle the counsellor connections
-        TheraHandler thh = new TheraHandler();
-        thh.start();
+        SocketHandler chat = new SocketHandler(1642, ServerMain::handleClientChat);
+        chat.start();
+        SocketHandler update = new SocketHandler(1643, ServerMain::handleClientUpdate);
+        update.start();
+        SocketHandler couns = new SocketHandler(1644, ServerMain::handleCounsellor);
+    }
 
-        //New ServerSocket to wait for incoming clients
-        ServerSocket in = new ServerSocket(1642);
 
-        //Waiting fo client to connect then starting new thread to handle connection.
-        while (run) {
-            Socket client = in.accept();
-            ServerThread thread = new ServerThread(client);
-            thread.start();
+    private synchronized static void handleClientChat(Socket s) {
+    }
+
+    public static void handleClientUpdate(Socket s) {
+        synchronized (ServerMain.class) {
+            Client cl = new Client(s);
+            int ID = Integer.valueOf(cl.read());
+            cl.setID(ID);
+            try {
+                cl.write(new BufferedReader(new FileReader(cl.getFilepath())).readLine());
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
-    //Method to add new connected counsellor
-    public static synchronized void addThera(Thera th) {
-        available.add(th);
+    private static void handleCounsellor(Socket s) {
+        synchronized (available) {
+            available.add(new Thera(s));
+        }
     }
 }
