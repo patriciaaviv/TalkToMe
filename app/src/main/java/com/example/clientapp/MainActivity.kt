@@ -14,20 +14,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var diaryButton = findViewById<Button>(R.id.button_diary)
+        val diaryButton = findViewById<Button>(R.id.button_diary)
 
         diaryButton.setOnClickListener {
             val intent = Intent(this@MainActivity, DiaryActivity::class.java)
             startActivity(intent)
         }
 
-        var historyButton = findViewById<Button>(R.id.button_history)
+        val historyButton = findViewById<Button>(R.id.button_history)
         historyButton.setOnClickListener {
             val intent = Intent(this@MainActivity, HistoryActivity::class.java)
             startActivity(intent)
         }
 
-        var chatButton = findViewById<Button>(R.id.button_chat)
+        val chatButton = findViewById<Button>(R.id.button_chat)
         chatButton.setOnClickListener {
             val intent = Intent(this@MainActivity, ChatActivity::class.java)
             startActivity(intent)

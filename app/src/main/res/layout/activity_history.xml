@@ -1,4 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:alwaysDrawnWithCache="false"
+    android:background="#00FFFFFF"
+    tools:context=".HistoryActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/lineChartView"
+
+        />
+
+
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_revert" />
+
+    <include layout="@layout/content_history" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:background="?attr/colorPrimary"
+        android:textAlignment="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="History" />
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+<!--
 <androidx.coordinatorlayout.widget.CoordinatorLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -10,9 +64,10 @@
     tools:context=".HistoryActivity">
 
     <LinearLayout
-        android:orientation="vertical"
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
 
     </LinearLayout>
@@ -22,22 +77,12 @@
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay"
-            app:title="History"
-            android:layout_gravity="center"
-            android:textAlignment="center"
 
 
-             />
+
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_history" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
@@ -49,4 +94,53 @@
 
 
 
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/BarChartHappy"
+        android:layout_width="fill_parent"
+        android:layout_height="250dp"
+
+       />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/BarChartNeutral"
+        android:layout_width="fill_parent"
+        android:layout_height="350dp" />
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/BarChartSad"
+        android:layout_width="fill_parent"
+        android:layout_height="450dp"
+
+        />
+
+
+
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/BarChartAngry"
+        android:layout_width="fill_parent"
+        android:layout_height="550dp" />
+
+    <View
+        android:id="@+id/view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_anchor="@+id/view"
+        app:layout_anchorGravity="center" />
+
+    <include layout="@layout/content_history" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="48dp"
+        android:layout_height="679dp"
+        android:layout_gravity="center"
+        android:background="?attr/colorPrimary"
+        android:textAlignment="center"
+        app:popupTheme="@style/AppTheme.PopupOverlay"
+        app:title="History" />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+-->

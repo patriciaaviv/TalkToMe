@@ -1,6 +1,7 @@
 package com.example.clientapp
 
 import android.os.Bundle
+import android.widget.Button
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 
@@ -18,6 +19,8 @@ class DiaryActivity : AppCompatActivity() {
                 .setAction("Action", null).show()
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
     }
 
 }
